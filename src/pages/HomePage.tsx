@@ -163,4 +163,5 @@ const HomeMainImage = styled.div`
   }
 `;
 
+
 export default HomePage;
