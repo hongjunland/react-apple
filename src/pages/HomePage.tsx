@@ -7,11 +7,11 @@ function HomePage() {
       <HomeMainSectionTop>
         <HomeMainTop>
           <div>
-            <h1 className="home-main-title">
+            <HomeMainTitle>
               당신 근처의
               <br />
               당근마켓
-            </h1>
+            </HomeMainTitle>
             <MainText>
               중고 거래부터 동네 정보까지, 이웃과 함께해요.
               <br />
@@ -38,22 +38,22 @@ function HomePage() {
             />
           </HomeMainImage>
           <div>
-            <h1 className="home-title">
+            <HomeMainTitle>
               우리 동네
               <br />
               중고 직거래 마켓
-            </h1>
+            </HomeMainTitle>
             <MainText>
               동네 주민들과 가깝고 따뜻한 거래를 지금 경험해보세요.
             </MainText>
-            <div className="home-buttons">
+            <HomeButtons>
               <Link to="/" className="home-button text-l text-bold">
                 인기매물 보기
               </Link>
               <Link to="/" className="home-button text-l text-bold ml-3">
                 믿을 수 있는 중고거래
               </Link>
-            </div>
+            </HomeButtons>
           </div>
         </HomeMainContent>
       </HomeMainSection>
@@ -68,19 +68,31 @@ function HomePage() {
             />
           </HomeMainImage02>
           <div>
-            <h1 className="home-main-title">
+            <HomeMainTitle>
               이웃과 함께 하는
               <br />
               동네생활
-            </h1>
+            </HomeMainTitle>
             <MainText>
               우리 동네의 다양한 이야기를 이웃과 함께 나누어요.
             </MainText>
-            {/* <ul className="home-story-list">
-              <li className="home-story-list-item"></li>
-              <li className="home-story-list-item"></li>
-              <li className="home-story-list-item"></li>
-            </ul> */}
+            <ul className="home-story-list">
+              <li className="home-story-list-item">
+                <IconStory className="icon-story-01"></IconStory>
+                <ItemTitleArea>우리동네질문</ItemTitleArea>
+                <ItemDescArea>궁금한 게 있을 땐 이웃에게 물어보세요.</ItemDescArea>
+              </li>
+              <li className="home-story-list-item">
+                <IconStory className="icon-story-02"></IconStory>
+                <ItemTitleArea>동네분실센터</ItemTitleArea>
+                <ItemDescArea>무언가를 잃어버렸을 때, 함께 찾을 수 있어요.</ItemDescArea>
+              </li>
+              <li className="home-story-list-item">
+                <IconStory className="icon-story-03"></IconStory>
+                <ItemTitleArea>동네모임</ItemTitleArea>
+                <ItemDescArea>관심사가 비슷한 이웃과 온오프라인으로 만나요.</ItemDescArea>
+              </li>
+            </ul>
           </div>
         </HomeMainReverseContent>
       </HomeMainGreenSection>
@@ -91,11 +103,40 @@ const MainText = styled.p`
   font-size: 1.6rem !important;
   line-height: 1.5;
   letter-spacing: -0.3px;
+`;
+const HomeTitle = styled.h1`
+  font-size: 4rem;
+  line-height: 1.35;
+  margin-bottom: 2.4rem;
+`;
+const HomeMainTitle = styled.h1`
+  font-size: 4rem;
+  line-height: 1.35;
+  margin-bottom: 2.4rem;
+`;
+const HomeButtons = styled.div`
+  margin-top: 3.2rem;
+`
+const ItemTitleArea = styled.div`
+  margin-bottom: 0.8rem;
+  margin-top: 1.6rem;
+  font-size: 1.4rem !important;
+  line-height: 1.5;
+  font-weight: bold;
+`
+const ItemDescArea = styled.div`
+  font-size: 1.3rem !important;
+  line-height: 1.5;
+`
+const IconStory = styled.div`
+  width: 56px;
+  height: 56px;
+  background-size: 56px 56px;
 `
 const HomeMainSectionTop = styled.section`
   padding-top: 24px;
   background-color: #fbf7f2;
-  .home-main-title {
+  ${HomeMainTitle} {
     font-size: 4.8rem;
     line-height: 1.3;
     padding-top: 27rem;
@@ -139,7 +180,7 @@ const HomeMainImageTop = styled.div`
 
 const HomeMainSection = styled.section`
   padding: 6rem 0;
-  .home-title {
+  ${HomeTitle} {
     font-size: 4rem;
     line-height: 1.35;
     margin-bottom: 2.4rem;
@@ -149,8 +190,7 @@ const HomeMainSection = styled.section`
     line-height: 1.5;
     letter-spacing: -0.3px;
   }
-  .home-buttons {
-    margin-top: 3.2rem;
+  ${HomeButtons} {
     .home-button {
       background-color: #f1f3f5;
       color: #212529;
@@ -201,23 +241,32 @@ const HomeMainImage = styled.div`
 
 const HomeMainGreenSection = styled(HomeMainSection)`
   background-color: rgb(230, 243, 230);
-  ul li{
+  ul li {
     margin: 1.6rem;
-  }
-  .home-main-title {
-    font-size: 4rem;
-    line-height: 1.35;
-    margin-bottom: 2.4rem;
   }
   .home-story-list{
     margin-top: 4rem;
     display: flex;
     justify-content: space-between;
     list-style-type: none;
-    .home-story-list-item{
+    .home-story-list-item {
       margin-right: 4rem;
       margin-left: 0;
       max-width: 14rem;
+    }
+    .icon-story-01{
+      background-image: url(https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-1-9226479b836cdc960291ffda91ace46c90a632f6cc868aa8983b3624e662a924.svg);
+    }
+    .icon-story-02{
+      background-image: url(https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-2-208bb88cad31e335b40bc8ac5b7684dcf8a36d77ac50770a497a9c967a3bfc4f.svg);
+    }
+    .icon-story-03{
+      background-image: url(https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-3-0a14d64c6101a7271655747d8401b9f71506578f8a4c0640608074e977bbc7c0.svg);
+    }
+    ${IconStory}{
+      width: 56px;
+      height: 56px;
+      background-size: 56px 56px;
     }
   }
 `;
