@@ -80,22 +80,56 @@ function HomePage() {
               <li className="home-story-list-item">
                 <IconStory className="icon-story-01"></IconStory>
                 <ItemTitleArea>우리동네질문</ItemTitleArea>
-                <ItemDescArea>궁금한 게 있을 땐 이웃에게 물어보세요.</ItemDescArea>
+                <ItemDescArea>
+                  궁금한 게 있을 땐 이웃에게 물어보세요.
+                </ItemDescArea>
               </li>
               <li className="home-story-list-item">
                 <IconStory className="icon-story-02"></IconStory>
                 <ItemTitleArea>동네분실센터</ItemTitleArea>
-                <ItemDescArea>무언가를 잃어버렸을 때, 함께 찾을 수 있어요.</ItemDescArea>
+                <ItemDescArea>
+                  무언가를 잃어버렸을 때, 함께 찾을 수 있어요.
+                </ItemDescArea>
               </li>
               <li className="home-story-list-item">
                 <IconStory className="icon-story-03"></IconStory>
                 <ItemTitleArea>동네모임</ItemTitleArea>
-                <ItemDescArea>관심사가 비슷한 이웃과 온오프라인으로 만나요.</ItemDescArea>
+                <ItemDescArea>
+                  관심사가 비슷한 이웃과 온오프라인으로 만나요.
+                </ItemDescArea>
               </li>
             </ul>
           </div>
         </HomeMainReverseContent>
       </HomeMainGreenSection>
+      <HomeMainSection>
+        <HomeMainContent>
+          <HomeMainImage03>
+            <img
+              srcSet="https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-3-5fd6fb61d603ab919a45566b2ea6b505c83a93ec218f34ddcd5cb482543e2317.webp "
+              className="home-main-image-03"
+              loading="lazy"
+              alt="내 근처에서 찾는 동네가게"
+              src="https://d1unjqcospf8gs.cloudfront.net/assets/home/main/3x/image-3-0c8b631ac2294ac5a3b3e7a3a5580c3e68a3303ad2aded1e84aa57a2e1442786.png"
+            />
+          </HomeMainImage03>
+          <div>
+            <HomeMainTitle>
+              내 근처에서 찾는
+              <br />
+              동네가게
+            </HomeMainTitle>
+            <MainText>
+              우리 동네 가게를 찾고 있나요?
+              <br />
+              동네 주민이 남긴 진짜 후기를 함께 확인해보세요!
+            </MainText>
+            <HomeButtons>
+              <a target="_blank" className="home-button text-l text-bold" data-event-category="town_link_from" data-event-action="index_base" data-event-label="main_town" href="https://town.daangn.com/">당근마켓 동네가게 찾기</a>
+            </HomeButtons>
+          </div>
+        </HomeMainContent>
+      </HomeMainSection>
     </>
   );
 }
@@ -116,23 +150,23 @@ const HomeMainTitle = styled.h1`
 `;
 const HomeButtons = styled.div`
   margin-top: 3.2rem;
-`
+`;
 const ItemTitleArea = styled.div`
   margin-bottom: 0.8rem;
   margin-top: 1.6rem;
   font-size: 1.4rem !important;
   line-height: 1.5;
   font-weight: bold;
-`
+`;
 const ItemDescArea = styled.div`
   font-size: 1.3rem !important;
   line-height: 1.5;
-`
+`;
 const IconStory = styled.div`
   width: 56px;
   height: 56px;
   background-size: 56px 56px;
-`
+`;
 const HomeMainSectionTop = styled.section`
   padding-top: 24px;
   background-color: #fbf7f2;
@@ -232,6 +266,7 @@ const HomeMainImage = styled.div`
   background-size: 532px 684px;
   width: 532px;
   height: 684px;
+  display: inline-block;
   img {
     background-size: 532px 684px;
     width: 532px;
@@ -244,7 +279,7 @@ const HomeMainGreenSection = styled(HomeMainSection)`
   ul li {
     margin: 1.6rem;
   }
-  .home-story-list{
+  .home-story-list {
     margin-top: 4rem;
     display: flex;
     justify-content: space-between;
@@ -254,16 +289,16 @@ const HomeMainGreenSection = styled(HomeMainSection)`
       margin-left: 0;
       max-width: 14rem;
     }
-    .icon-story-01{
+    .icon-story-01 {
       background-image: url(https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-1-9226479b836cdc960291ffda91ace46c90a632f6cc868aa8983b3624e662a924.svg);
     }
-    .icon-story-02{
+    .icon-story-02 {
       background-image: url(https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-2-208bb88cad31e335b40bc8ac5b7684dcf8a36d77ac50770a497a9c967a3bfc4f.svg);
     }
-    .icon-story-03{
+    .icon-story-03 {
       background-image: url(https://d1unjqcospf8gs.cloudfront.net/assets/home/main/icon-story-3-0a14d64c6101a7271655747d8401b9f71506578f8a4c0640608074e977bbc7c0.svg);
     }
-    ${IconStory}{
+    ${IconStory} {
       width: 56px;
       height: 56px;
       background-size: 56px 56px;
@@ -284,6 +319,12 @@ const HomeMainImage02 = styled(HomeMainImage)`
     width: 546px;
     height: 740px;
   }
+`;
+
+const HomeMainImage03 = styled(HomeMainImage)`
+  background-size: 526px 735px;
+  width: 526px;
+  height: 735px;
 `;
 
 export default HomePage;
