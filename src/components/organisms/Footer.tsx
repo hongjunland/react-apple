@@ -242,4 +242,5 @@ const GlobalLinkSelect = styled.select`
   border: none;
   appearance: none;
 `
+
 export default Footer;
